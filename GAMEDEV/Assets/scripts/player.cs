@@ -20,6 +20,7 @@ public class player : MonoBehaviour
 
     public int vidaMaxima;
     public int vida;
+    public bool hit;
 
     bool pulando = false;
     int doispulo = 0;
@@ -32,6 +33,7 @@ public class player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hit = false;
         vida = vidaMaxima;
         enemyS = enemy.GetComponent<enemy>();
         atq.enabled =false;
@@ -97,12 +99,12 @@ public class player : MonoBehaviour
             
         }
 
-        if(rigid.velocity.y > 0)
+        if(rigid.velocity.y > 0 && !hit )
         {
             animationController.JumpAnimation("PlayerPulando" ,0.4f);
         }
         
-        if(rigid.velocity.y < 0)
+        if(rigid.velocity.y < 0  && !hit)
         {
             animationController.changeAnimation("PlayerCaindo");
         }
@@ -141,14 +143,22 @@ public class player : MonoBehaviour
         atacando = true;
         atq.enabled=true;       
         enemyS.levarDano(1);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         atacando = false;
         atq.enabled=false;
     }
 
-    public void levarDano(int dano)
+    public void levarDano(int dano, float sentido)
     {
-        vida -= dano;
+        if(vida > 0)
+        {
+            vida -= dano;
+            hit = true;
+            animationController.changeAnimation("playerDano");
+            rigid.AddForce(new Vector2(2f*sentido, 2f), ForceMode2D.Impulse);
+            hit = false;
+        }
+            
     }
 
 

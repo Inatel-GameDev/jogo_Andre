@@ -125,6 +125,7 @@ MonoBehaviour:
   atacando: 0
   vidaMaxima: 5
   vida: 0
+  hit: 0
 --- !u!61 &6793291582652991932
 BoxCollider2D:
   m_ObjectHideFlags: 0

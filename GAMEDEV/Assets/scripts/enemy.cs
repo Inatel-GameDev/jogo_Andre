@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class enemy : MonoBehaviour
 {
+    public GameObject inimigo;
+
     public GameObject playerGO;
     public player playerS;
     private string currentAnimation;
@@ -43,7 +45,7 @@ public class enemy : MonoBehaviour
     void Update()
     {
         move();
-        
+        morte();
     }
 
     void move()
@@ -81,7 +83,7 @@ public class enemy : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D cool)
     {
-        if(cool.CompareTag("Player") && !atacando){
+        if(cool.CompareTag("Player") && !atacando && (Time.time > tempo)){
             StartCoroutine(Preparar());
         }
         if(cool.CompareTag("Player") && atacando)
@@ -110,10 +112,16 @@ public class enemy : MonoBehaviour
     {
         trocarAnimacao("carangueijoAtacando");
         if(Time.time > tempo){
-            playerS.levarDano(1);
+            if(transform.position.x>playerGO.transform.position.x){
+                playerS.levarDano(1, -1f);
+            }
+            if(transform.position.x<playerGO.transform.position.x){
+                playerS.levarDano(1, 1f);
+            }
+            
             tempo = Time.time + tempoEspera;
         }
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.75f);
         mover = true;
         atacando = false;
         busca.enabled = true;
@@ -132,5 +140,12 @@ public class enemy : MonoBehaviour
         atq2.enabled = false;
     }
     
+    private void morte()
+    {
+        if (vida <= 0)
+        {
+            Destroy(inimigo);
+        }
+    }
     
 }
