@@ -6,13 +6,13 @@ public class enemy : MonoBehaviour
 {
     public GameObject inimigo;
 
-    public GameObject playerGO;
-    public player playerS;
+    private GameObject playerGO;
+    private player playerS;
     private string currentAnimation;
     private Animator animator;
 
     public int vidaMaxima;
-    public int vida;
+    [SerializeField] int vida;
 
     public Collider2D busca;
     public Collider2D atq1;
@@ -31,6 +31,7 @@ public class enemy : MonoBehaviour
 
     void Start()
     {
+        playerGO = GameObject.FindWithTag("Player");
         tempo = tempoEspera;
         mover = true;
         atacando = false;
@@ -45,7 +46,6 @@ public class enemy : MonoBehaviour
     void Update()
     {
         move();
-        morte();
     }
 
     void move()
@@ -79,6 +79,11 @@ public class enemy : MonoBehaviour
     public void levarDano(int dano)
     {
         vida = vida - dano;
+        if(vida <= 0)
+        {
+            Destroy(inimigo);
+            
+        }
     }
 
     private void OnTriggerStay2D(Collider2D cool)
@@ -113,7 +118,7 @@ public class enemy : MonoBehaviour
         trocarAnimacao("carangueijoAtacando");
         if(Time.time > tempo){
             if(transform.position.x>playerGO.transform.position.x){
-                playerS.levarDano(1, -1f);
+                playerS.levarDano(1, -1);
             }
             if(transform.position.x<playerGO.transform.position.x){
                 playerS.levarDano(1, 1f);
@@ -138,14 +143,9 @@ public class enemy : MonoBehaviour
         busca.enabled = true;
         atq1.enabled = false;
         atq2.enabled = false;
+        tempo = Time.time + tempoEspera;
     }
     
-    private void morte()
-    {
-        if (vida <= 0)
-        {
-            Destroy(inimigo);
-        }
-    }
+
     
 }

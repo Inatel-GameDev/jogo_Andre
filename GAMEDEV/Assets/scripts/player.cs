@@ -6,8 +6,7 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
-    public GameObject enemy;
-    private enemy enemyS;
+
     private animationControl animationController;
 
     public float velocidade;
@@ -35,8 +34,7 @@ public class player : MonoBehaviour
     {
         hit = false;
         vida = vidaMaxima;
-        enemyS = enemy.GetComponent<enemy>();
-        atq.enabled =false;
+        atq.enabled = true;
         atacando = false;
         rigid = GetComponent<Rigidbody2D>();
         animationController = GetComponent<animationControl>();
@@ -140,12 +138,9 @@ public class player : MonoBehaviour
     private IEnumerator FazerAtaque()
     {
         animationController.changeAnimation("playerAtacando");
-        atacando = true;
-        atq.enabled=true;       
-        enemyS.levarDano(1);
+        atacando = true;    
         yield return new WaitForSeconds(0.5f);
         atacando = false;
-        atq.enabled=false;
     }
 
     public void levarDano(int dano, float sentido)

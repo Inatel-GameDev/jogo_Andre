@@ -7,13 +7,13 @@ public class plataforma : MonoBehaviour
 
     public float target1 = 1.0f;
     bool target1_1= false;
-    public float target2 = -1.5f;
+    public float target2;
     bool target2_1= true;
 
     float speed = 0.7f;
     void Start()
     {
-        
+        target2 = -1.5f;
     }
 
     // Update is called once per frame

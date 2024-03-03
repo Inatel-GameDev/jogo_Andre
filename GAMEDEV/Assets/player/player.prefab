@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8376066231585493362}
   - component: {fileID: 3273146445223298073}
   - component: {fileID: 4779086052516238318}
+  - component: {fileID: 5650811611522691817}
   - component: {fileID: 6793291582652991932}
   - component: {fileID: 8590084643311446798}
   - component: {fileID: 3285349029647381640}
@@ -34,7 +35,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.312, y: -0.641, z: -0.030119505}
-  m_LocalScale: {x: 4.0862, y: 4.08, z: 1}
+  m_LocalScale: {x: 3.4212766, y: 3.2807345, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6574259244676535065}
@@ -82,7 +83,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2931336549597434619, guid: c78e4b5d558d2504d9e0dc92b1ba81cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -118,7 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82d727f63bf2935488d1205b1c2c0f87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
   velocidade: 5
   VY: 5
   atq: {fileID: 8590084643311446798}
@@ -126,6 +126,19 @@ MonoBehaviour:
   vidaMaxima: 5
   vida: 0
   hit: 0
+--- !u!114 &5650811611522691817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709335563990183259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f5100a324d0ec5489f4e9301be124f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 4779086052516238318}
 --- !u!61 &6793291582652991932
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -179,7 +192,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709335563990183259}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -206,8 +219,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 4
   m_CompositeOrder: 0
-  m_Offset: {x: 0.2524967, y: -0.046701092}
-  m_Radius: 0.062471855
+  m_Offset: {x: 0.22371829, y: -0.046701092}
+  m_Radius: 0.091250345
 --- !u!50 &3285349029647381640
 Rigidbody2D:
   serializedVersion: 4

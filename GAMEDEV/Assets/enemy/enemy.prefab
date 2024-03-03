@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 3631677490321012844}
   m_Layer: 0
   m_Name: enemy
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +37,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.402, y: 2.486, z: 0}
-  m_LocalScale: {x: 2.9887, y: 2.9887, z: 2.9887}
+  m_LocalScale: {x: 2.5023663, y: 2.4032183, z: 2.9887}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1065002385524394031, guid: 575b909834a563e4b9fdd7a27c954b61, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -154,8 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcce27a7e6a8cf942b70fe202c7af0fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerGO: {fileID: 0}
-  playerS: {fileID: 0}
+  inimigo: {fileID: 5205551288244356981}
   vidaMaxima: 5
   vida: 0
   busca: {fileID: 3129937129126987651}
@@ -196,7 +195,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0034276098, y: 0}
+  m_Offset: {x: 0.003427729, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -206,7 +205,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.69961405, y: 0.25}
+  m_Size: {x: 0.58862865, y: 0.25}
   m_EdgeRadius: 0
 --- !u!95 &1652061517326756515
 Animator:
