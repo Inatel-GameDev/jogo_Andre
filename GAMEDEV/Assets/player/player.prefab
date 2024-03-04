@@ -119,6 +119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82d727f63bf2935488d1205b1c2c0f87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  P: {fileID: 1709335563990183259}
+  Spawn: {fileID: 0}
+  SpawnS: {fileID: 0}
   velocidade: 5
   VY: 5
   atq: {fileID: 8590084643311446798}

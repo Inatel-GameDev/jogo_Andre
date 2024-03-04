@@ -6,8 +6,11 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
-
+    public GameObject P;
     private animationControl animationController;
+    public GameObject Spawn;
+    public Spawnar SpawnS;
+
 
     public float velocidade;
     public float VY;
@@ -32,6 +35,7 @@ public class player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SpawnS = Spawn.GetComponent<Spawnar>();
         hit = false;
         vida = vidaMaxima;
         atq.enabled = true;
@@ -54,16 +58,16 @@ public class player : MonoBehaviour
     void move()
     {
         Vector3 movimento = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
-        if(!atacando){
+        if(!atacando && !hit){
             transform.position += movimento * Time.deltaTime * velocidade;
         }
         
-        if(movimento != parado && !pulando && !atacando)
+        if(movimento != parado && !pulando && !atacando && !hit)
         {
             animationController.changeAnimation("playerCorrendo");
 
         }
-        else if(movimento == parado && !pulando && !atacando)
+        else if(movimento == parado && !pulando && !atacando && !hit) 
         {
             
             animationController.changeAnimation("playerParado");
@@ -129,7 +133,7 @@ public class player : MonoBehaviour
 
     void ataque()
     {
-        if(Input.GetKeyDown("e") && !atacando && !pulando)
+        if(Input.GetKeyDown("e") && !atacando && !pulando && !hit)
         {
             StartCoroutine(FazerAtaque());
         }
@@ -149,11 +153,21 @@ public class player : MonoBehaviour
         {
             vida -= dano;
             hit = true;
-            animationController.changeAnimation("playerDano");
             rigid.AddForce(new Vector2(2f*sentido, 2f), ForceMode2D.Impulse);
-            hit = false;
-        }
+            StartCoroutine(anim());
             
+        }
+        if(vida<=0)
+        {
+            SpawnS.spawnar(P);
+        }            
+    }
+
+    IEnumerator anim()
+    {
+        animationController.changeAnimation("playerDano");
+        yield return new WaitForSeconds(0.5f);
+        hit = false;
     }
 
 

@@ -5047,6 +5047,51 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
+--- !u!1 &1073028692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1073028693}
+  - component: {fileID: 1073028694}
+  m_Layer: 0
+  m_Name: Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1073028693
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073028692}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.23, y: -2.82, z: -0.021971308}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1073028694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073028692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 342cfaa04ed907e42a859df8de8e0eaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!1 &1088986225
 GameObject:
   m_ObjectHideFlags: 0
@@ -5845,11 +5890,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3487374107006135927, guid: 919b8a29c38061948b943c5d9a8553a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.569828
+      value: 28.11
       objectReference: {fileID: 0}
     - target: {fileID: 3487374107006135927, guid: 919b8a29c38061948b943c5d9a8553a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2298136
+      value: 2.99
       objectReference: {fileID: 0}
     - target: {fileID: 3487374107006135927, guid: 919b8a29c38061948b943c5d9a8553a0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8308,6 +8353,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 4779086052516238318, guid: 4b1d1c47300b6854d9ff4a2b12f1876c, type: 3}
+      propertyPath: Spawn
+      value: 
+      objectReference: {fileID: 1073028692}
     - target: {fileID: 7595734325999017226, guid: 4b1d1c47300b6854d9ff4a2b12f1876c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.31
@@ -8364,3 +8413,4 @@ SceneRoots:
   - {fileID: 597251283}
   - {fileID: 1284345968}
   - {fileID: 1648723651}
+  - {fileID: 1073028693}

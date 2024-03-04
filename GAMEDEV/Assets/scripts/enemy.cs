@@ -18,7 +18,7 @@ public class enemy : MonoBehaviour
     public Collider2D atq1;
     public Collider2D atq2;
 
-    private bool atacando;
+    public bool atacando;
     private float tempo;
     float tempoEspera = 2;
 
@@ -91,14 +91,6 @@ public class enemy : MonoBehaviour
         if(cool.CompareTag("Player") && !atacando && (Time.time > tempo)){
             StartCoroutine(Preparar());
         }
-        if(cool.CompareTag("Player") && atacando)
-        {
-            StartCoroutine(AtacarAc());
-        }
-        if(!cool.CompareTag("Player") && atacando)
-        {
-            StartCoroutine(Atacar());
-        }
     }
 
     private IEnumerator Preparar()
@@ -110,42 +102,17 @@ public class enemy : MonoBehaviour
         atacando = true;
         atq1.enabled = true;
         atq2.enabled = true;
-        
-    }
-
-    private IEnumerator AtacarAc()
-    {
         trocarAnimacao("carangueijoAtacando");
-        if(Time.time > tempo){
-            if(transform.position.x>playerGO.transform.position.x){
-                playerS.levarDano(1, -1);
-            }
-            if(transform.position.x<playerGO.transform.position.x){
-                playerS.levarDano(1, 1f);
-            }
-            
-            tempo = Time.time + tempoEspera;
-        }
-        yield return new WaitForSeconds(0.75f);
-        mover = true;
-        atacando = false;
-        busca.enabled = true;
-        atq1.enabled = false;
-        atq2.enabled = false;
-    }
-
-    private IEnumerator Atacar()
-    {
-        trocarAnimacao("carangueijoAtacando");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         mover = true;
         atacando = false;
         busca.enabled = true;
         atq1.enabled = false;
         atq2.enabled = false;
         tempo = Time.time + tempoEspera;
+        
     }
-    
+
 
     
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3487374107006135927}
   - component: {fileID: 6363370377642022327}
   - component: {fileID: 5242828566714287860}
+  - component: {fileID: 903131660186359935}
   - component: {fileID: 6950487315786564599}
   - component: {fileID: 3129937129126987651}
   - component: {fileID: 1652061517326756515}
@@ -142,6 +143,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.26204208, y: 0.25}
   m_EdgeRadius: 0
+--- !u!114 &903131660186359935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5205551288244356981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ea7f5f50966230418919de17e4b9cd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 6950487315786564599}
 --- !u!114 &6950487315786564599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,6 +174,7 @@ MonoBehaviour:
   busca: {fileID: 3129937129126987651}
   atq1: {fileID: 1549681976198387156}
   atq2: {fileID: 3631677490321012844}
+  atacando: 0
   velocidade: 1
 --- !u!61 &3129937129126987651
 BoxCollider2D:
