@@ -9,6 +9,8 @@ public class FimFase2 : MonoBehaviour
 
     private string currentAnimation;
 
+    public string fase;
+
     
     void Start()
     {
@@ -21,7 +23,7 @@ public class FimFase2 : MonoBehaviour
             changeAnimation("Abrir");
             if(Input.GetKeyDown("w"))
             {
-                SceneManager.LoadScene("fase3", LoadSceneMode.Single);
+                SceneManager.LoadScene(fase, LoadSceneMode.Single);
             }
             
         }
