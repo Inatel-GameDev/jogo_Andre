@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Water Reflect Medium 01_0: 8458751010735645177
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Back Palm Tree Left 03_0: 827204477788340650
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

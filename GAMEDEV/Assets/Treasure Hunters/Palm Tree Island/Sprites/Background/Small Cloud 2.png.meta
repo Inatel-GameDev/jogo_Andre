@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Small Cloud 2_0: -7229155515459518846
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

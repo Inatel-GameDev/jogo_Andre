@@ -6,6 +6,10 @@ TagManager:
   tags:
   - chao
   - enemy
+  - parede
+  - TextoMoeda
+  - moeda
+  - trap
   layers:
   - Default
   - TransparentFX
